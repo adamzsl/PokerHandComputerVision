@@ -7,10 +7,13 @@ from utils import Loader
 from PIL import Image
 
 
-cardpath = 'test/u/u1g.png'
+cardpath = 'test/u/2.png'
 
 original_image = cv2.imread(cardpath)
 original_image_rgb = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+
+player_hand = []
+table5 = []
 
 height, width, _ = original_image_rgb.shape
 middle = height // 2
@@ -24,11 +27,11 @@ bottom_half = original_image_rgb[middle:, :]
 plt.imshow(original_image_rgb)
 plt.show()
 
-for i,original_image_rgb in enumerate([bottom_half, top_half]):
+for iTurn,original_image_rgb in enumerate([bottom_half, top_half]):
 
-    if i == 0:
+    if iTurn == 0:
         print("Your hand:")
-    if i == 1:
+    if iTurn == 1:
         print("Table:")
 
     imgResult = original_image_rgb.copy()
@@ -175,9 +178,17 @@ for i,original_image_rgb in enumerate([bottom_half, top_half]):
             suit = it[1]
         except:
             continue
+
         rs = process.template_matching(rank, suit, train_ranks, train_suits, show_plt=False)
+        if iTurn == 0:
+            player_hand.append(rs)
+        if iTurn == 1:
+            table5.append(rs)
         print(rs)
 
+
+print(player_hand)
+print(table5)
 d = {
     11: 'Jack',
     12: 'Queen',
@@ -187,6 +198,17 @@ d = {
     'C': 'Clubs',
     'D': 'Diamonds',
     'H': 'Hearts'
+}
+
+d1 = {
+    'J': 11,
+    'Q': 12,
+    'K': 13,
+    'A': 14,
+    'Spades': 'S',
+    'Clubs': 'C',
+    'Diamonds': 'D',
+    'Hearts': 'H'
 }
 
 # 9-high Straight Flush
@@ -225,7 +247,14 @@ d = {
 # player_hand = [(14, 'S'), (9, 'H')]
 # table = [(8, 'C'), (7, 'D'), (5, 'S'), (4, 'H'), (2, 'D')]
 
-cards = player_hand + table
-print(f"Your hand:\n{highest_hand.translate(d, player_hand)}")
-print(f"Cards on the table:\n{highest_hand.translate(d, table)}")
-print(f"Your highest hand: {highest_hand(cards, d)}")
+cards1 = player_hand + table5
+cards = []
+
+for card in cards1:
+    cards.append([int(d1.get(card[0], card[0])), d1.get(card[1])])
+
+print(cards)
+
+# print(f"Your hand:\n{highest_hand.translate(d, player_hand)}")
+# print(f"Cards on the table:\n{highest_hand.translate(d, table)}")
+print(f"Your highest hand: {highest_hand.highest_hand(cards, d)}")

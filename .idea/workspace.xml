@@ -5,63 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bc37b-ea8b-4cb2-b0f7-5e918aa59fc9" name="Changes" comment="wykrywanie tupli hand i stol">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cards3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highest_hand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/J.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/K.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/ranks/Q.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/suits/Clubs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/suits/Diamonds.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/suits/Hearts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/suits/Spades.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processing/Augment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processing/ColorHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processing/process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/10dJsKh-h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/10dKhJs-h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/2cards.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/2d8dAc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/5d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/5s.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/7d-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/8c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/8card_slight.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/8s4h6s.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/9sJd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/AhQc10c-h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/AhQc10c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Jh7d3h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Kc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Kh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/KhJdAs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Ks7s2h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/as4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/green_many.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/vid2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/vid3.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/vid4.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/Loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/MathHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/NameImg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/ranks/A.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/ranks/J.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/ranks/K.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/ranks/Q.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/adamwebmaker/PokerHandComputerVision.git",
-    "accountId": "0aff6824-bf7d-4dce-8f56-5fc4c5210fc9"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;adamwebmaker&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/adamwebmaker/PokerHandComputerVision.git&quot;,
+    &quot;accountId&quot;: &quot;0aff6824-bf7d-4dce-8f56-5fc4c5210fc9&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -96,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Loader.executor": "Run",
+    "Python.display.executor": "Run",
     "Python.main.executor": "Run",
     "Python.process.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -128,6 +84,15 @@
       <option name="presentableId" value="Default" />
       <updated>1719059786338</updated>
     </task>
+    <task id="LOCAL-00001" summary="wykrywanie tupli hand i stol">
+      <option name="closed" value="true" />
+      <created>1719085354165</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719085354165</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
