@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="964bc37b-ea8b-4cb2-b0f7-5e918aa59fc9" name="Changes" comment="wykrywanie tupli hand i stol">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highest_hand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/A.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/J.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/K.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ranks/Q.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/suits/Clubs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/suits/Diamonds.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/suits/Hearts.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/suits/Spades.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processing/Augment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processing/ColorHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processing/process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/10dJsKh-h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/10dKhJs-h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/2cards.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/2d8dAc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/5d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/5s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/7d-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/8c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/8card_slight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/8s4h6s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/9sJd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/AhQc10c-h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/AhQc10c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Jh7d3h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Kc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Kh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/KhJdAs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Ks7s2h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/as4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/green_many.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/vid2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/vid3.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/vid4.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/Loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MathHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/NameImg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/display.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/adamwebmaker/PokerHandComputerVision.git",
+    "accountId": "0aff6824-bf7d-4dce-8f56-5fc4c5210fc9"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2iEdh1YJf9dihjgfIz1R37wV42C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Loader.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.process.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/bilbo/PycharmProjects/pythonProject",
+    "settings.editor.selected.configurable": "configurable.group.build"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bilbo\PycharmProjects\pythonProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bilbo\PycharmProjects\pythonProject" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="964bc37b-ea8b-4cb2-b0f7-5e918aa59fc9" name="Changes" comment="" />
+      <created>1719059786338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719059786338</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="wykrywanie tupli hand i stol" />
+    <option name="LAST_COMMIT_MESSAGE" value="wykrywanie tupli hand i stol" />
+  </component>
+</project>
