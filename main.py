@@ -4,8 +4,6 @@ import numpy as np
 import highest_hand
 from processing import process
 from utils import Loader
-from PIL import Image
-
 
 cardpath = 'test/u/2.png'
 
@@ -27,7 +25,7 @@ bottom_half = original_image_rgb[middle:, :]
 plt.imshow(original_image_rgb)
 plt.show()
 
-for iTurn,original_image_rgb in enumerate([bottom_half, top_half]):
+for iTurn, original_image_rgb in enumerate([bottom_half, top_half]):
 
     if iTurn == 0:
         print("Your hand:")
@@ -43,9 +41,9 @@ for iTurn,original_image_rgb in enumerate([bottom_half, top_half]):
 
     four_corners_set = corners_list
 
-    # plt.imshow(thresh)
-    # plt.grid()
-    # plt.show()
+    plt.imshow(thresh)
+    plt.grid()
+    plt.show()
 
     for i, corners in enumerate(corners_list):
         top_left = corners[0][0]
@@ -61,25 +59,25 @@ for iTurn,original_image_rgb in enumerate([bottom_half, top_half]):
 
     flatten_card_set = process.find_flatten_cards(imgResult2, four_corners_set)
 
-    # for img_output in flatten_card_set:
-    #     print(img_output.shape)
-    #
-    #     plt.imshow(img_output)
-    #     plt.show()
+    for img_output in flatten_card_set:
+        print(img_output.shape)
+
+        plt.imshow(img_output)
+        plt.show()
 
 
     cropped_images = process.get_corner_snip(flatten_card_set)
-    # for i, pair in enumerate(cropped_images):
-    #     for j, img in enumerate(pair):
-    #         # cv2.imwrite(f'num{i*2+j}.jpg', img)
-    #         plt.subplot(1, len(pair), j+1)
-    #         plt.imshow(img, 'gray')
-    #
-    #     plt.show()
+    for i, pair in enumerate(cropped_images):
+        for j, img in enumerate(pair):
+            # cv2.imwrite(f'num{i*2+j}.jpg', img)
+            plt.subplot(1, len(pair), j+1)
+            plt.imshow(img, 'gray')
+
+        plt.show()
 
     ranksuit_list: list = list()
 
-    # plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(12, 6))
     for i, (img, original) in enumerate(cropped_images):
 
         drawable = img.copy()
@@ -97,9 +95,9 @@ for iTurn,original_image_rgb in enumerate([bottom_half, top_half]):
         cv2.drawContours(drawable, cnts_sort, -1, (0, 255, 0), 1)
 
         # cv2.imwrite(f'{i}.jpg', drawable)
-        # plt.grid(True)
-        # plt.subplot(1, len(cropped_images), i + 1)
-        # plt.imshow(img)
+        plt.grid(True)
+        plt.subplot(1, len(cropped_images), i + 1)
+        plt.imshow(img)
 
         ranksuit = list()
         for i, cnt in enumerate(cnts_sort):
@@ -250,11 +248,11 @@ d1 = {
 cards1 = player_hand + table5
 cards = []
 
-for card in cards1:
-    cards.append([int(d1.get(card[0], card[0])), d1.get(card[1])])
+# for card in cards1:
+#     cards.append([int(d1.get(card[0], card[0])), d1.get(card[1])])
 
-print(cards)
+print(cards1)
 
 # print(f"Your hand:\n{highest_hand.translate(d, player_hand)}")
 # print(f"Cards on the table:\n{highest_hand.translate(d, table)}")
-print(f"Your highest hand: {highest_hand.highest_hand(cards, d)}")
+print(f"Your highest hand: {highest_hand.highest_hand(cards1, d1)}")

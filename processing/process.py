@@ -1,11 +1,43 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
-from processing.ColorHelper import ColorHelper
 import utils
 
-from utils import MathHelper
+
+class ColorHelper:
+
+    @staticmethod
+    def gray2bin(img):
+        return cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+
+    @staticmethod
+    def reverse(img):
+        return cv2.bitwise_not(img)
+
+
+class MathHelper:
+
+    @staticmethod
+    def length(x1, y1, x2, y2):
+        """
+        This function calculates the Euclidean distance between two points in a 2D plane.
+
+        Args:
+            x1: The x-coordinate of the first point.
+            y1: The y-coordinate of the first point.
+            x2: The x-coordinate of the second point.
+            y2: The y-coordinate of the second point.
+
+        Returns:
+            The Euclidean distance between the two points.
+        """
+
+        # Use the distance formula to calculate the length
+        length = math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+
+        return length
 
 
 def get_thresh(img):
@@ -124,48 +156,48 @@ def get_corner_snip(flattened_images: list):
     return corner_images
 
 
-def split_rank_suit(img, original, debug=False) -> list:
-    """
-    :param debug: display opencv or not
-    :param img:
-    :param original: original image
-    :return: list of image, index 0: rank, index 1: suit
-    """
-
-    contours, _ = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-    cnts_sort = sorted(contours, key=cv2.contourArea, reverse=True)[:2]
-    cnts_sort = sorted(cnts_sort, key=lambda x: cv2.boundingRect(x)[1])
-
-    cv2.drawContours(img, cnts_sort, -1, (0, 255, 0), 1)
-
-    ranksuit = list()
-
-    _rank = None
-
-    for i, cnt in enumerate(cnts_sort):
-
-        x, y, w, h = cv2.boundingRect(cnt)
-        x2, y2 = x + w, y + h
-
-        crop = original[y:y2, x:x2]
-
-        if i == 0:  # rank: 70, 125
-            crop = cv2.resize(crop, (70, 125), 0, 0)
-            _rank = crop
-        else:  # suit: 70, 100
-            crop = cv2.resize(crop, (70, 100), 0, 0)
-            if debug and _rank is not None:
-                r = cv2.resize(_rank, (70, 100), 0, 0)
-                s = cv2.resize(crop, (70, 100), 0, 0)
-                h = np.concatenate((r, s), axis=1)
-                h = cv2.resize(h, (250, 200), 0, 0)
-                cv2.imshow("crop2", h)
-
-        crop = ColorHelper.gray2bin(crop)
-        crop = ColorHelper.reverse(crop)
-        ranksuit.append(crop)
-
-    return ranksuit
+# def split_rank_suit(img, original, debug=False) -> list:
+#     """
+#     :param debug: display opencv or not
+#     :param img:
+#     :param original: original image
+#     :return: list of image, index 0: rank, index 1: suit
+#     """
+#
+#     contours, _ = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+#     cnts_sort = sorted(contours, key=cv2.contourArea, reverse=True)[:2]
+#     cnts_sort = sorted(cnts_sort, key=lambda x: cv2.boundingRect(x)[1])
+#
+#     cv2.drawContours(img, cnts_sort, -1, (0, 255, 0), 1)
+#
+#     ranksuit = list()
+#
+#     _rank = None
+#
+#     for i, cnt in enumerate(cnts_sort):
+#
+#         x, y, w, h = cv2.boundingRect(cnt)
+#         x2, y2 = x + w, y + h
+#
+#         crop = original[y:y2, x:x2]
+#
+#         if i == 0:  # rank: 70, 125
+#             crop = cv2.resize(crop, (70, 125), 0, 0)
+#             _rank = crop
+#         else:  # suit: 70, 100
+#             crop = cv2.resize(crop, (70, 100), 0, 0)
+#             if debug and _rank is not None:
+#                 r = cv2.resize(_rank, (70, 100), 0, 0)
+#                 s = cv2.resize(crop, (70, 100), 0, 0)
+#                 h = np.concatenate((r, s), axis=1)
+#                 h = cv2.resize(h, (250, 200), 0, 0)
+#                 cv2.imshow("crop2", h)
+#
+#         crop = ColorHelper.gray2bin(crop)
+#         crop = ColorHelper.reverse(crop)
+#         ranksuit.append(crop)
+#
+#     return ranksuit
 
 
 def template_matching(rank, suit, train_ranks, train_suits, show_plt=False) -> tuple[str, str]:
@@ -223,16 +255,16 @@ def template_matching(rank, suit, train_ranks, train_suits, show_plt=False) -> t
     return best_rank_match_name, best_suit_match_name
 
 
-def show_text(predictions: list[str], four_corners_set, img):
-    for i, prediction in enumerate(predictions):
-        # figure out where to place the text
-        corners = np.array(four_corners_set[i])
-        corners_flat = corners.reshape(-1, corners.shape[-1])
-        start_x = corners_flat[0][0] + 0
-        half_y = corners_flat[0][1] - 40
-
-        font = cv2.FONT_HERSHEY_COMPLEX
-        cv2.putText(img, prediction, (start_x, half_y), font, 0.8, (50, 205, 50), 2, cv2.LINE_AA)
+# def show_text(predictions: list[str], four_corners_set, img):
+#     for i, prediction in enumerate(predictions):
+#         # figure out where to place the text
+#         corners = np.array(four_corners_set[i])
+#         corners_flat = corners.reshape(-1, corners.shape[-1])
+#         start_x = corners_flat[0][0] + 0
+#         half_y = corners_flat[0][1] - 40
+#
+#         font = cv2.FONT_HERSHEY_COMPLEX
+#         cv2.putText(img, prediction, (start_x, half_y), font, 0.8, (50, 205, 50), 2, cv2.LINE_AA)
 
 
 # region trash
@@ -291,32 +323,32 @@ def show_text(predictions: list[str], four_corners_set, img):
 #
 #     return rank_suit_mapping
 
-def eval_rank_suite(rank_suit_mapping, modelRanks, modelSuits):
-    pred = []
-
-    for rank, suit in rank_suit_mapping:
-        # resize the rank and suit to our desired size
-        rank = cv2.resize(rank, (utils.CARD_WIDTH, utils.CARD_HEIGHT))
-        suit = cv2.resize(suit, (utils.CARD_WIDTH, utils.CARD_HEIGHT))
-
-        # get the predictions for suit and rank
-        bestSuitPredictions = model_wrapper.model_predict(modelSuits, suit, 'suits')  # min(suitDict, key=suitDict.get)
-        bestRankPredictions = model_wrapper.model_predict(modelRanks, rank, 'ranks')  # min(rankDict, key=rankDict.get)
-
-        # get the names and percentage of best and second best suits and ranks
-        bestSuitName, bestSuitPer = model_wrapper.model_predictions_to_name(bestSuitPredictions)
-        bestRankName, bestRankPer = model_wrapper.model_predictions_to_name(bestRankPredictions)
-        sbestSuitName, sbestSuitPer = model_wrapper.model_predictions_to_name(bestSuitPredictions, loc=-2)
-        sbestRankName, sbestRankPer = model_wrapper.model_predictions_to_name(bestRankPredictions, loc=-2)
-
-        # show both guesses
-        totalPer = bestRankPer + sbestRankPer + bestSuitPer + sbestSuitPer
-        guess1 = '{}/{}/{}%'.format(bestRankName, bestSuitName, round(((bestSuitPer + bestRankPer) / totalPer) * 100))
-        guess2 = '{}/{}/{}%'.format(sbestRankName, sbestSuitName,
-                                    round(((sbestSuitPer + sbestRankPer) / totalPer) * 100))
-
-        pred.append('{}\n{}'.format(guess1, guess2))
-
-    return pred
+# def eval_rank_suite(rank_suit_mapping, modelRanks, modelSuits):
+#     pred = []
+#
+#     for rank, suit in rank_suit_mapping:
+#         # resize the rank and suit to our desired size
+#         rank = cv2.resize(rank, (utils.CARD_WIDTH, utils.CARD_HEIGHT))
+#         suit = cv2.resize(suit, (utils.CARD_WIDTH, utils.CARD_HEIGHT))
+#
+#         # get the predictions for suit and rank
+#         bestSuitPredictions = model_wrapper.model_predict(modelSuits, suit, 'suits')  # min(suitDict, key=suitDict.get)
+#         bestRankPredictions = model_wrapper.model_predict(modelRanks, rank, 'ranks')  # min(rankDict, key=rankDict.get)
+#
+#         # get the names and percentage of best and second best suits and ranks
+#         bestSuitName, bestSuitPer = model_wrapper.model_predictions_to_name(bestSuitPredictions)
+#         bestRankName, bestRankPer = model_wrapper.model_predictions_to_name(bestRankPredictions)
+#         sbestSuitName, sbestSuitPer = model_wrapper.model_predictions_to_name(bestSuitPredictions, loc=-2)
+#         sbestRankName, sbestRankPer = model_wrapper.model_predictions_to_name(bestRankPredictions, loc=-2)
+#
+#         # show both guesses
+#         totalPer = bestRankPer + sbestRankPer + bestSuitPer + sbestSuitPer
+#         guess1 = '{}/{}/{}%'.format(bestRankName, bestSuitName, round(((bestSuitPer + bestRankPer) / totalPer) * 100))
+#         guess2 = '{}/{}/{}%'.format(sbestRankName, sbestSuitName,
+#                                     round(((sbestSuitPer + sbestRankPer) / totalPer) * 100))
+#
+#         pred.append('{}\n{}'.format(guess1, guess2))
+#
+#     return pred
 
 # endregion

@@ -1,6 +1,12 @@
 import cv2
 
-from utils import NameImg
+# from utils import NameImg
+
+
+class NameImg:
+    def __init__(self) -> None:
+        self.name = None
+        self.img = None
 
 
 class Loader:
