@@ -2,11 +2,11 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import highest_hand
-from processing import process
-from utils import Loader
+import process
+import loader
 
-cardpath = 'test/2.png'
-debug = False
+cardpath = 'test/1.png'
+debug = 0
 
 original_image = cv2.imread(cardpath)
 original_image_rgb = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
@@ -19,28 +19,18 @@ middle = height // 2
 top_half = original_image_rgb[:middle, :]
 bottom_half = original_image_rgb[middle:, :]
 
-# cv2.imshow('Top Half', top_half)
-# cv2.imshow('Bottom Half', bottom_half)
-# plt.show()
-if debug:
-    plt.imshow(original_image_rgb)
-    plt.show()
+# if debug:
+plt.imshow(original_image_rgb)
+plt.show()
 
-for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn mozna usunac
-
-    # if iTurn == 0:
-    #     print("Your hand:")
-    # if iTurn == 1:
-    #     print("Table:")
+for iTurn, original_image_rgb in enumerate([bottom_half, top_half]):
 
     imgResult = original_image_rgb.copy()
     imgResult2 = original_image_rgb.copy()
 
     thresh = process.get_thresh(imgResult)
 
-    corners_list = process.find_corners_set(thresh, imgResult, draw=True)
-
-    four_corners_set = corners_list
+    corners_list = process.find_corners_set(thresh)
 
     if debug:
         plt.imshow(thresh)
@@ -58,29 +48,14 @@ for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn moz
         # print(f'bottom_right: {bottom_right}')
         # print(f'top_right: {top_right}\n')
 
-
-    flatten_card_set = process.find_flatten_cards(imgResult2, four_corners_set)
+    flatten_card_set = process.find_flatten_cards(imgResult2, corners_list)
 
     if debug:
         for img_output in flatten_card_set:
-            # print(img_output.shape)
-
             plt.imshow(img_output)
             plt.show()
 
-
     cropped_images = process.get_corner_snip(flatten_card_set)
-
-    if debug:
-        for i, pair in enumerate(cropped_images):
-            for j, img in enumerate(pair):
-                # cv2.imwrite(f'num{i*2+j}.jpg', img)
-                plt.subplot(1, len(pair), j+1)
-                plt.imshow(img, 'gray')
-
-            plt.show()
-        plt.figure(figsize=(12, 6))
-    # ranksuit_list: list = list()
     ranksuit_list = []
 
     for i, (img, original) in enumerate(cropped_images):
@@ -89,17 +64,8 @@ for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn moz
         d2 = original.copy()
 
         contours, _ = cv2.findContours(drawable, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
         cnts_sort = sorted(contours, key=cv2.contourArea, reverse=True)[:2]
-
         cnts_sort = sorted(cnts_sort, key=lambda x: cv2.boundingRect(x)[1])
-
-        # for cnt in cnts_sort:
-        #     print(f'contour sorts = {cv2.contourArea(cnt)}')
-
-        cv2.drawContours(drawable, cnts_sort, -1, (0, 255, 0), 1)
-
-        cv2.imwrite(f'{i}.jpg', drawable)
 
         if debug:
             plt.grid(True)
@@ -121,19 +87,9 @@ for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn moz
 
             crop = cv2.bitwise_not(crop)
 
-            # # reverse bin image
-            # crop =
-
             ranksuit.append(crop)
 
-            # cv2.rectangle(d2, (x, y), (x2, y2), (0, 255, 0), 2)
-
         ranksuit_list.append(ranksuit)
-
-        if debug:
-            cv2.imshow('', d2)
-            cv2.waitKey()
-            cv2.destroyAllWindows()
 
     if debug:
         plt.show()
@@ -151,32 +107,28 @@ for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn moz
         except:
             pass
 
-
-
-        # cv2.imwrite(f"{i}.jpg", rank_name)
-
         if debug:
             plt.subplot(len(ranksuit_list), 2, i * 2 + 1)
             plt.imshow(rank, 'gray')
-            plt.subplot(len(ranksuit_list), 2, i*2+2)
+            plt.subplot(len(ranksuit_list), 2, i * 2 + 2)
             plt.imshow(suit, 'gray')
     if debug:
         plt.show()
 
-    train_ranks = Loader.load_ranks('imgs/ranks')
-    train_suits = Loader.load_suits('imgs/suits')
+    train_ranks = loader.Loader.load_ranks('imgs/ranks')
+    train_suits = loader.Loader.load_suits('imgs/suits')
 
     # print(train_ranks[0].img.shape)
     # print(train_suits[0].img.shape)
     if debug:
         for i, rank in enumerate(train_ranks):
-            plt.subplot(1, len(train_ranks), i +1)
+            plt.subplot(1, len(train_ranks), i + 1)
             plt.axis('off')
             plt.imshow(rank.img, 'gray')
         plt.show()
 
         for i, suit in enumerate(train_suits):
-            plt.subplot(1, len(train_suits), i +1)
+            plt.subplot(1, len(train_suits), i + 1)
             plt.axis('off')
             plt.imshow(suit.img, 'gray')
 
@@ -194,11 +146,7 @@ for iTurn, original_image_rgb in enumerate([bottom_half, top_half]): # iturn moz
             player_hand.append(rs)
         if iTurn == 1:
             table5.append(rs)
-        # print(rs)
 
-
-# print(player_hand)
-# print(table5)
 d = {
     11: 'Jack',
     12: 'Queen',

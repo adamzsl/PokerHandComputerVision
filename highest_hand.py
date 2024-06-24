@@ -4,6 +4,7 @@ def translate(dictonary, cards):
         string += f"{dictonary.get(item[0], str(item[0]))} of {dictonary.get(item[1])}\n"
     return string
 
+
 def highest_hand(cards, d):
     ranks_count = {}
     suits_count = {}

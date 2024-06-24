@@ -1,7 +1,5 @@
 import cv2
 
-# from utils import NameImg
-
 
 class NameImg:
     def __init__(self) -> None:
@@ -11,10 +9,7 @@ class NameImg:
 
 class Loader:
 
-    @staticmethod
     def load_ranks(dirpath: str):
-        """Loads rank images from directory specified by filepath. Stores
-        them in a list of Train_ranks objects."""
 
         if dirpath is not None:
             dirpath = dirpath.removesuffix('/')
@@ -33,10 +28,7 @@ class Loader:
 
         return train_ranks
 
-    @staticmethod
     def load_suits(dirpath):
-        """Loads suit images from directory specified by filepath. Stores
-        them in a list of Train_suits objects."""
 
         if dirpath is not None:
             dirpath = dirpath.removesuffix('/')
