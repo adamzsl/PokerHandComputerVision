@@ -44,9 +44,9 @@ def get_thresh(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # bin = ColorHelper.gray2bin(gray)
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
-    canny = cv2.Canny(blur, 42, 89)
+    canny = cv2.Canny(blur, 42, 89) # cannys edge detection
     kernel = np.ones((2, 2))
-    dial = cv2.dilate(canny, kernel=kernel, iterations=2)
+    dial = cv2.dilate(canny, kernel=kernel, iterations=2) # ten czarnobialy
 
     return dial
 
@@ -200,7 +200,7 @@ def get_corner_snip(flattened_images: list):
 #     return ranksuit
 
 
-def template_matching(rank, suit, train_ranks, train_suits, show_plt=False) -> tuple[str, str]:
+def template_matching(rank, suit, train_ranks, train_suits, show_plt=False) -> tuple[int, str]:
     """Finds best rank and suit matches for the query card. Differences
     the query card rank and suit images with the train rank and suit images.
     The best match is the rank or suit image that has the least difference."""
@@ -252,7 +252,7 @@ def template_matching(rank, suit, train_ranks, train_suits, show_plt=False) -> t
 
     plt.show()
 
-    return best_rank_match_name, best_suit_match_name
+    return int(best_rank_match_name), best_suit_match_name
 
 
 # def show_text(predictions: list[str], four_corners_set, img):

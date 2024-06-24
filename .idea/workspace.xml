@@ -4,21 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="964bc37b-ea8b-4cb2-b0f7-5e918aa59fc9" name="Changes" comment="wykrywanie układów">
+    <list default="true" id="964bc37b-ea8b-4cb2-b0f7-5e918aa59fc9" name="Changes" comment="wykrycie w init funkcji, usuniecie zbednych rzeczy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/suits/Clubs.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/suits/Diamonds.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/suits/Hearts.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/suits/Spades.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/ranks/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/ranks/12.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/Augment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/ColorHelper.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/processing/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/Loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/MathHelper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/NameImg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/10dJsKh-h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/10dKhJs-h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/2cards.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/2d8dAc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/5d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/5s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7d-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/8c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/8card_slight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/8s4h6s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/9sJd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AhQc10c-h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AhQc10c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Jh7d3h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Kc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Kh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/KhJdAs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Ks7s2h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/as4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/green_many.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t2b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t2g.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/t9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/u/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/u/u1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/u/u1g.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/vid2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/vid3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/vid4.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719087902914</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="wykrycie w init funkcji">
+      <option name="closed" value="true" />
+      <created>1719140695586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719140695586</updated>
+    </task>
+    <task id="LOCAL-00004" summary="wykrycie w init funkcji, usuniecie zbednych rzeczy">
+      <option name="closed" value="true" />
+      <created>1719140716171</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719140716171</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +184,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wykrywanie tupli hand i stol" />
     <MESSAGE value="wykrywanie układów" />
-    <option name="LAST_COMMIT_MESSAGE" value="wykrywanie układów" />
+    <MESSAGE value="wykrycie w init funkcji" />
+    <MESSAGE value="wykrycie w init funkcji, usuniecie zbednych rzeczy" />
+    <option name="LAST_COMMIT_MESSAGE" value="wykrycie w init funkcji, usuniecie zbednych rzeczy" />
   </component>
 </project>
