@@ -6,10 +6,10 @@ import process
 import loader
 
 cardpath = 'test/1.png'
-debug = 0
+debug = 1
 
 original_image = cv2.imread(cardpath)
-original_image_rgb = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+original_image_rgb = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB) # Konwersja BGR -> RGB
 
 player_hand = []
 table5 = []
@@ -20,8 +20,8 @@ top_half = original_image_rgb[:middle, :]
 bottom_half = original_image_rgb[middle:, :]
 
 # if debug:
-plt.imshow(original_image_rgb)
-plt.show()
+#     plt.imshow(original_image_rgb)
+#     plt.show()
 
 for iTurn, original_image_rgb in enumerate([bottom_half, top_half]):
 
